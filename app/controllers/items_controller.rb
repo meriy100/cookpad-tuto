@@ -12,6 +12,10 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def recommended
+    @items = Item.where(recommended: true)
+    render :index
+  end
 
   private
 
