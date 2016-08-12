@@ -13,4 +13,8 @@ class Order < ApplicationRecord
 
   has_many :line_items
 
+  enum status: { checked_out: 1, elce: 2 }
+
+
+
 end

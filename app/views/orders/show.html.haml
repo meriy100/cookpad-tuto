@@ -1,0 +1,23 @@
+%h1 ご注文ありがとうございました
+
+%h3 = "注文日時: #{@order.ordered_at.strftime('%Y/%m/%d %H:%M')}"
+
+
+- if @order.line_items.present?
+  %table.line_items
+    %thead
+      %tr
+        %th 商品
+        %th 単価
+        %th 数量
+        %th 小計
+    %tbody
+      - @order.line_items.order(:id).each do |li|
+        %tr
+          %td= li.item.name
+          %td= li.item.price
+          %td= li.quantity
+          %td= li.subtotal
+- else
+  %p.empty 商品はありません。
+  = link_to '買い物を続ける', root_path
