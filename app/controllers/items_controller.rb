@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @line_item = LineItem.new(item: @item)
   end
 
   def recommended
