@@ -1,5 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "create Category" do
+    context "vaild attributes" do
+      specify {
+        Category.create attributes_for(:category)
+        expect(Category.count).to eq 1
+      }
+    end
+    context "invaild attributes" do
+      specify {
+        Category.create attributes_for(:category, name: "")
+        expect(Category.count).to eq 0
+      }
+    end
+  end
 end
