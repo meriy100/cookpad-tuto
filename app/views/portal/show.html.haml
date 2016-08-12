@@ -2,6 +2,9 @@
   - @categories.each do |category|
     %li
       = link_to category.name, category_items_path(category)
+  %li
+    = link_to "uncategorized", uncategorized_items_path
+
 %ul
   - @items.each do |items|
     %li
