@@ -7,7 +7,7 @@
       %th Description
       %th Price
       %th Image url
-      %th
+      %th Recommended
       %th
       %th
 
@@ -18,7 +18,7 @@
         %td= item.description
         %td= "#{item.price}円"
         %td= item.image_url
+        %td= "おすすめ" if item.recommended?
         %td= link_to 'Show', item
 
-%br
 
