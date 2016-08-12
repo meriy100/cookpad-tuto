@@ -43,8 +43,16 @@ group :development, :test do
   gem 'spring'
   gem 'spring-commands-rspec'
 
+  # Debugger
   gem 'pry-rails'              # railsでpryが使える
   gem 'pry-byebug'             # pryでデバックコマンドが使える
+  gem 'byebug'
+  gem 'better_errors'
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
 end
 
 group :development do

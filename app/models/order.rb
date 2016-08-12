@@ -16,5 +16,8 @@ class Order < ApplicationRecord
   enum status: { checked_out: 1, elce: 2 }
 
 
+  def total
+    line_items.sum { |line_item| line_item.item.price }
+  end
 
 end
