@@ -1,16 +1,15 @@
 class OrdersController < ApplicationController
-  before_action :set_order
+  before_action :set_order, only: [:show]
 
   def show
   end
 
   def create
-    @order = Order.new
-    @order.line_items.new params[:line_items]
-
-    if @order.save
-      redirect_to order_path(@order)
-    end
+    @order = Order.new(status: :checked_out)
+    @order.line_items.new line_items_params
+    @order.save
+    render :create, status: 201
+    # リダイレクトはしないかんじで
   end
 
   private
@@ -19,6 +18,13 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+  def line_items_params
+    params.require(:line_items).map do |line_item|
+      line_item.permit(
+        :item_id, :quantity
+      )
+    end
+  end
 
   # つかわない
   def order_params
