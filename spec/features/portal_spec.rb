@@ -17,7 +17,7 @@ RSpec.feature "See shop categories", type: :feature do
     expect(page).not_to have_text('フライパン')
   end
 
-  xscenario 'A user can see categorized items from portal', type: :feature do
+  scenario 'A user can see categorized items from portal', type: :feature do
     kitchenware = create(:category, name: '調理器具')
     kitchenware.items.create!(name: '包丁', recommended: true)
     kitchenware.items.create!(name: 'フライパン')

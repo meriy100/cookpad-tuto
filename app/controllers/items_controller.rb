@@ -4,7 +4,11 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = if params[:category_id].present?
+               Category.find(params[:category_id]).items.all
+             else
+               Item.all
+             end
   end
 
   # GET /items/1
