@@ -4,7 +4,7 @@ RSpec.describe Item, type: :model do
   describe "create Item" do
     context "vaild attributes" do
       specify {
-        Item.create attributes_for(:item)
+        Item.create attributes_for(:item, name: "まな板")
         expect(Item.count).to eq 1
       }
     end
