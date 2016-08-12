@@ -3,8 +3,8 @@ require 'rails_helper'
 
 RSpec.feature "See shop categories", type: :feature do
   scenario 'Listing categories' do
-    create(:category, "調理器具")
-    create(:category, "食器")
+    create(:category, name: "調理器具")
+    create(:category, name:  "食器")
 
     visit root_path
 
