@@ -23,8 +23,8 @@
 .line_item
   = form_for @line_item do |f|
     = f.hidden_field :item_id
-= f.label :quantity, '数量'
-= f.number_field :quantity, size: 5, required: true
-= submit_tag 'カートに追加'
+    = f.label :quantity, '数量'
+    = f.number_field :quantity, size: 5, required: true
+    = submit_tag 'カートに追加'
 
 = link_to 'Back', items_path

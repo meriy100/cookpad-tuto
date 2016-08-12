@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :line_items, only: %i(create)
+
   resources :categories, only: %i(index) do
     resources :items, only: %i(index)
   end
