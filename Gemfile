@@ -40,6 +40,9 @@ group :development, :test do
   gem 'capybara'
   gem 'spring'
   gem 'spring-commands-rspec'
+
+  gem 'pry-rails'              # railsでpryが使える
+  gem 'pry-byebug'             # pryでデバックコマンドが使える
 end
 
 group :development do

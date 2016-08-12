@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160812071126) do
     t.string   "image_url"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.boolean  "recomended",  default: false, null: false
+    t.boolean  "recommended", default: false, null: false
   end
 
 end
